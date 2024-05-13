@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+{% block title %}Создать тест{% endblock %}
+{% block content %}
+    <h1>Создать тест</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            {{ form.title.label_tag }}
+            {{ form.title }}
+        </div>
+        <div>
+            <label for="option1">Вариант ответа 1:</label>
+            <input type="text" id="option1" name="option1">
+        </div>
+        <div>
+            <label for="option2">Вариант ответа 2:</label>
+            <input type="text" id="option2" name="option2">
+        </div>
+        <div>
+            <label for="option3">Вариант ответа 3:</label>
+            <input type="text" id="option3" name="option3">
+        </div>
+        <div>
+            <label for="option4">Вариант ответа 4:</label>
+            <input type="text" id="option4" name="option4">
+        </div>
+        <button type="submit" class="btn btn-success">Добавить</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}
